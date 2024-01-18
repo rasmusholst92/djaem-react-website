@@ -11,7 +11,7 @@ export const FooterContainer = styled(Container)`
   right: 0;
   width: 100%;
   z-index: 999;
-  overflow: hidden; /* Add overflow property */
+  overflow: hidden;
 `;
 
 export const FooterText = styled(Typography)`
@@ -23,15 +23,15 @@ export const FooterText = styled(Typography)`
 export const FooterEmail = styled(Typography)`
   && {
     color: white;
-    font-size: 14px; /* Adjust the font size if needed */
-    margin-top: 5px; /* Add spacing between the copyright text and email */
+    font-size: 14px;
+    margin-top: 5px;
   }
 `;
 
 export const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align icons to the right */
+  justify-content: flex-end;
 `;
 
 export const IconStyle = {

@@ -1,8 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import '../styles/MusicStyles.css';
+import styled from 'styled-components';
 import { getAllMusic } from '../hooks/useMusicData.js';
-import Track from './MusicTrack.js';
+import MusicTrack from './MusicTrack.js';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const StyledMusicContainer = styled.div`
+  padding-top: 10vh; // Increased top padding
+`;
+
+const SectionHeader = styled.h2`
+  font-size: 3.5em;
+  font-style: italic;
+  text-align: center;
+  padding: 0 50px;
+  margin-bottom: -30px;
+`;
+
+const SliderContainer = styled.div`
+  padding: 0 50px;
+`;
 
 const Music = () => {
   const [tracks, setTracks] = useState([]);
@@ -34,17 +52,18 @@ const Music = () => {
       .then(data => setTracks(data))
       .catch(error => console.error(error));
   }, []);
-
   return (
-    <div style={{ padding: "0 50px", paddingTop: "10vh", position: "relative" }}>
-      <h2 className="section-header">MUSIK</h2>
-      <Slider {...settings}>
-        {tracks.map((track) => (
-          <Track key={track.music_id} track={track} />
-        ))}
-      </Slider>
-    </div>
-  );  
+    <StyledMusicContainer>
+      <SectionHeader>MUSIK</SectionHeader>
+      <SliderContainer>
+        <Slider {...settings}>
+          {tracks.map((track) => (
+            <MusicTrack key={track.music_id} track={track} />
+          ))}
+        </Slider>
+      </SliderContainer>
+    </StyledMusicContainer>
+  );
 };
 
 export default Music;

@@ -7,17 +7,6 @@
   position: relative;
 }
 
-.section-header {
-  font-size: 3.5em; /* Large font size */
-  font-style: italic; /* Italic text */
-  position: absolute; /* Position absolutely within the relative container */
-  top: 13%; /* Center vertically relative to the parent container */
-  left: 50%; /* Center horizontally relative to the parent container */
-  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-  z-index: 10; /* Ensure it's above other content */
-}
-
-
 .track-image {
   width: 100%;
   filter: grayscale(100%);

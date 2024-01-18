@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: var(--raisin-black); // Darker background color
+  background-color: var(--raisin-black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,6 +29,6 @@ export const BandName = styled.h1`
   font-family: 'Playfair Display', serif;
 
   span:first-child, span:last-child {
-    font-size: 5em; /* Larger size for the first and last letters */
+    font-size: 5em;
   }
 `;

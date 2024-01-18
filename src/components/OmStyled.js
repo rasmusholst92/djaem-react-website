@@ -6,7 +6,7 @@ export const PageContainer = styled.div`
   align-items: center;
   margin: 40px;
   position: relative; // Make sure this is set
-  margin-top: 150px; // Increase space between sections
+  margin-top: 50vh; // Increase space between sections
 `;
 
 export const SectionHeader = styled.h2`
