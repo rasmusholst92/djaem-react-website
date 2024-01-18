@@ -1,0 +1,121 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.track-container {
+  padding: 0 50px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-header {
+  font-size: 3.5em; /* Large font size */
+  font-style: italic; /* Italic text */
+  position: absolute; /* Position absolutely within the relative container */
+  top: 13%; /* Center vertically relative to the parent container */
+  left: 50%; /* Center horizontally relative to the parent container */
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+
+.track-image {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.track-container:hover .track-info-overlay {
+  opacity: 1;
+}
+
+.track-container:hover .track-image {
+  filter: grayscale(0%);
+}
+
+.track-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+
+.track-info-overlay .track-title {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.track-info-overlay .track-link {
+  text-align: left;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.track-info-overlay .track-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transition: width 0.5s ease-in-out;
+}
+
+.track-info-overlay .track-link:hover::before {
+  width: 100%;
+}
+
+.track-info-overlay .track-link:hover {
+  font-style: italic;
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 600px) {
+  .track-container {
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    /* Adjust the height if needed */
+  }
+
+  .track-info-overlay {
+    /* Adjust the font size, padding, and other styles for mobile */
+    font-size: 14px;
+    padding-left: 5px;
+  }
+
+  .track-info-overlay .track-title {
+    margin-bottom: 5px;
+  }
+}
+
+/* Tablet Devices */
+@media screen and (max-width: 1024px) {
+  .track-container {
+    margin-top: 7.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.track-info-overlay {
+    font-size: 16px;
+    padding-left: 8px;
+}
+
+.track-info-overlay .track-title {
+margin-bottom: 8px;
+}
+}

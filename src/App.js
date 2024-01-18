@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Om from './components/Om';
+import Music from './components/Music';
+import GlobalStyles from './styles/GlobalStyles';
 
-function App() {
+const App = () => {
+  const omRef = useRef(null);
+  const musicRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    const offsetTop = ref.current.offsetTop;
+    const headerHeight = document.querySelector('header').offsetHeight; // Dynamically get the header height
+    window.scrollTo({
+      top: offsetTop - headerHeight,
+      behavior: 'smooth'
+    });
+  };  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Header onMusicClick={() => scrollToSection(musicRef)} onOmClick={() => scrollToSection(omRef)} />
+      <div ref={musicRef} className="section"><Music /></div>
+      <div ref={omRef} className="section"><Om /></div>
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
