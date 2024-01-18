@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import { getAllMusic } from '../hooks/useMusicData.js';
@@ -24,10 +24,22 @@ const SliderContainer = styled.div`
 
 const Music = () => {
   const [tracks, setTracks] = useState([]);
+  const sliderRef = useRef(null);
+
+  const handleKeyDown = (e) => {
+    if (sliderRef.current) {
+      if (e.keyCode === 37) { // Left arrow key
+        sliderRef.current.slickPrev();
+      } else if (e.keyCode === 39) { // Right arrow key
+        sliderRef.current.slickNext();
+      }
+    }
+  };
 
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
+    centerMode: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -51,12 +63,19 @@ const Music = () => {
     getAllMusic()
       .then(data => setTracks(data))
       .catch(error => console.error(error));
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
+
   return (
     <StyledMusicContainer>
       <SectionHeader>MUSIK</SectionHeader>
       <SliderContainer>
-        <Slider {...settings}>
+        <Slider ref={sliderRef} {...settings}>
           {tracks.map((track) => (
             <MusicTrack key={track.music_id} track={track} />
           ))}

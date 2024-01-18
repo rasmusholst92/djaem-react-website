@@ -11,7 +11,7 @@ const App = () => {
 
   const scrollToSection = (ref) => {
     const offsetTop = ref.current.offsetTop;
-    const headerHeight = document.querySelector('header').offsetHeight; // Dynamically get the header height
+    const headerHeight = document.querySelector('header').offsetHeight;
     window.scrollTo({
       top: offsetTop - headerHeight,
       behavior: 'smooth'

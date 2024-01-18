@@ -6,7 +6,7 @@ export const PageContainer = styled.div`
   align-items: center;
   margin: 40px;
   position: relative; // Make sure this is set
-  margin-top: 50vh; // Increase space between sections
+  margin-top: 40dvh; // Increase space between sections
 `;
 
 export const SectionHeader = styled.h2`
@@ -16,7 +16,7 @@ export const SectionHeader = styled.h2`
   top: -75px; // Adjust as needed to position correctly
   left: 50%; // Center horizontally
   transform: translateX(-50%); // Adjust for exact centering
-  z-index: 10; // Ensure it's above other content
+  z-index: 9; // Ensure it's above other content
 `;
 
 

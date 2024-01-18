@@ -6,6 +6,9 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   padding: 0.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 export const NavLink = styled.button`
