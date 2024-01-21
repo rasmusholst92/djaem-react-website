@@ -14,13 +14,13 @@ const Footer = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <FooterContainer maxWidth="xxl" sx={{fontFamily: ""}}>
+    <FooterContainer className="app-footer" maxWidth="xxl" sx={{fontFamily: ""}}>
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item xs={12} sm={6}>
           <FooterText variant="body1">
             © {currentYear} DJAEM. {isMobile ? '' : 'Alle rettigheder forbeholdes'}
           </FooterText>
-          <a style={{ color: 'white', textDecoration: 'none' }} href="mailto:kontakt@djaem.dk">kontakt@djaem.dk</a>
+          <a style={{ color: 'black', textDecoration: 'none' }} href="mailto:kontakt@djaem.dk">kontakt@djaem.dk</a>
         </Grid>
         <Grid item xs={12} sm={6}>
           <IconContainer>

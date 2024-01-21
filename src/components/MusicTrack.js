@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Box, Typography, Paper, Link as MuiLink } from '@mui/material';
-import { useTrail, animated } from 'react-spring';
+import { Modal, Button, Box, Typography, Paper, Link as MuiLink } from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
+import { useTrail ,useSpring, animated } from 'react-spring';
 
 const TrackContainer = styled.div`
   margin: 1rem;
@@ -34,7 +35,7 @@ const TrackTitle = styled(Typography).attrs({ variant: 'h5' })`
 
 const AnimatedLink = animated(styled(MuiLink)`
   display: block;
-  background-color: #f0f0f0; // Default background color
+  background-color: #f0f0f0;
   color: black !important;
   margin-top: 10px !important;
   padding: 10px;
@@ -43,20 +44,52 @@ const AnimatedLink = animated(styled(MuiLink)`
   text-align: center;
   width: 150px;
   text-decoration: none !important;
-  transition: background-color 0.3s ease, color 0.3s ease; // Combined transition
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover, &:focus, &:active {
     text-decoration: none !important;
-    background-color: var(--raisin-black) !important; // New background color on hover, focus, and active
-    color: white !important; // Text color change on hover, focus, and active
+    background-color: var(--raisin-black) !important;
+    color: white !important;
   }
 `);
 
+const InfoButton = styled(animated.button)`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--raisin-black);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+`;
 
+const StyledModal = styled(Modal)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
+const ModalContent = styled(Paper)`
+  padding: 20px;
+  max-width: 500px;
+`;
 
 const MusicTrack = ({ track }) => {
   const [hover, setHover] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [showInfoButton, setShowInfoButton] = useState(false);
+
+  const infoButtonSpring = useSpring({ 
+    opacity: showInfoButton ? 1 : 0,
+    transform: showInfoButton ? 'translateX(0px)' : 'translateX(100px)'
+  });
+
   const parseUrls = (urlString) => {
     try {
       return JSON.parse(urlString);
@@ -75,35 +108,40 @@ const MusicTrack = ({ track }) => {
     from: { opacity: 0, transform: 'translateX(-0px)' },
   });
 
-return (
-  <TrackContainer onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-    <Paper className='track-container-paper'>
-      <img src={track.image} alt={track.title} className="track-image" />
-      <TrackInfoOverlay>
-        {trail.map((animation, index) => {
-          const [service, url] = links[index];
-          return (
-            <AnimatedLink
-              key={service}
-              style={{
-                ...animation,
-                delay: index * 200
-              }}
-              href={
-                url.startsWith("http://") || url.startsWith("https://")
-                  ? url
-                  : `http://${url}`
-              }
-              target="_blank"
-            >
-              {service.toUpperCase()}
-            </AnimatedLink>
-          );
-        })}
-      </TrackInfoOverlay>
-    </Paper>
-  </TrackContainer>
-);
-      };
+  return (
+    <TrackContainer 
+      onMouseEnter={() => { setHover(true); setShowInfoButton(true); }} 
+      onMouseLeave={() => { setHover(false); setShowInfoButton(false); }}
+    >
+      <Paper className='track-container-paper'>
+        <img src={track.image} alt={track.title} className="track-image" />
+        <TrackInfoOverlay>
+          {trail.map((animation, index) => {
+            const [service, url] = links[index];
+            return (
+              <AnimatedLink
+                key={service}
+                style={{ ...animation, delay: index * 200 }}
+                href={url.startsWith("http://") || url.startsWith("https://") ? url : `http://${url}`}
+                target="_blank"
+              >
+                {service.toUpperCase()}
+              </AnimatedLink>
+            );
+          })}
+        </TrackInfoOverlay>
+        <InfoButton style={infoButtonSpring} onClick={() => setModalOpen(true)}>
+          <InfoIcon />
+        </InfoButton>
+      </Paper>
+
+      <StyledModal open={isModalOpen} onClose={() => setModalOpen(false)}>
+        <ModalContent>
+          <Typography>{track.description}</Typography>
+        </ModalContent>
+      </StyledModal>
+    </TrackContainer>
+  );
+};
 
 export default MusicTrack;

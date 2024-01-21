@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: var(--raisin-black);
+  background-color: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.25rem;
-  position: sticky;
   top: 0;
   z-index: 10;
 `;
@@ -14,7 +13,7 @@ export const HeaderContainer = styled.header`
 export const NavLink = styled.button`
   background: none;
   border: none;
-  color: white; // White text color
+  color: var(--white);
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
@@ -22,16 +21,26 @@ export const NavLink = styled.button`
   &:hover {
     font-style: italic;
     transition: font-family 0.3s ease;
-    color: var(--amaranth-purple); 
+    color: var(--djaem-red); 
   }
 `;
 
 export const BandName = styled.h1`
-  color: white;
-  font-size: 3em;
+  color: var(--white);
+  font-size: 3.5em;
+  letter-spacing: .5rem;
   font-family: 'Playfair Display', serif;
+  position: relative;
+  padding-bottom: 2px;
 
-  span:first-child, span:last-child {
-    font-size: 5em;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right, var(--djaem-red), var(--lavender-blush), var(--djaem-red));
   }
 `;
+

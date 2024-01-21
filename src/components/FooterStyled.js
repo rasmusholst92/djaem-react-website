@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Container, Typography } from '@mui/material';
 
 export const FooterContainer = styled(Container)`
-  background-color: var(--raisin-black);
+  background-color: #ffffff;
   color: white;
   padding: 20px;
   position: relative;
@@ -16,13 +16,13 @@ export const FooterContainer = styled(Container)`
 
 export const FooterText = styled(Typography)`
   && {
-    color: white;
+    color: var(--black);
   }
 `;
 
 export const FooterEmail = styled(Typography)`
   && {
-    color: white;
+    color: #ffffff;
     font-size: 14px;
     margin-top: 5px;
   }
@@ -35,9 +35,9 @@ export const IconContainer = styled.div`
 `;
 
 export const IconStyle = {
-  color: 'white',
+  color: 'var(--black)',
   transition: 'all 0.3s ease',
   '&:hover': {
-    color: 'var(--amaranth-purple)',
+    color: 'var(--djaem-red)'
   },
 };

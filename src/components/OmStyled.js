@@ -17,6 +17,7 @@ export const SectionHeader = styled.h2`
   left: 50%; // Center horizontally
   transform: translateX(-50%); // Adjust for exact centering
   z-index: 9; // Ensure it's above other content
+  color: white;
 `;
 
 
@@ -75,6 +76,7 @@ export const Paragraph = styled.p`
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: justify; /* Justify the text */
+  color: white;
 
   /* Use pseudo-elements to add additional spacing */
   &:first-line {

@@ -14,8 +14,9 @@ const SectionHeader = styled.h2`
   font-size: 3.5em;
   font-style: italic;
   text-align: center;
+  color: white;
   padding: 0 50px;
-  margin-bottom: -30px;
+  margin-bottom: -28px;
 `;
 
 const SliderContainer = styled.div`

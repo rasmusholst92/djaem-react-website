@@ -11,13 +11,17 @@ const App = () => {
 
   const scrollToSection = (ref) => {
     const offsetTop = ref.current.offsetTop;
-    const headerHeight = document.querySelector('header').offsetHeight;
+    const header = document.querySelector('header');
+    const footer = document.querySelector('.app-footer');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const footerHeight = footer ? footer.offsetHeight : 0;
+  
     window.scrollTo({
-      top: offsetTop - headerHeight,
+      top: offsetTop - headerHeight - footerHeight - 25,
       behavior: 'smooth'
     });
-  };  
-
+  };
+  
   return (
     <>
       <GlobalStyles />
