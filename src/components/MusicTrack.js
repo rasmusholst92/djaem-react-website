@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Modal, Button, Box, Typography, Paper, Link as MuiLink } from '@mui/material';
+import { Modal, Box, Typography, Paper, Link as MuiLink } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import { useTrail ,useSpring, animated } from 'react-spring';
 
