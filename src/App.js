@@ -10,17 +10,16 @@ const App = () => {
   const musicRef = useRef(null);
 
   const scrollToSection = (ref) => {
-    const offsetTop = ref.current.offsetTop;
-    const header = document.querySelector('header');
-    const footer = document.querySelector('.app-footer');
-    const headerHeight = header ? header.offsetHeight : 0;
-    const footerHeight = footer ? footer.offsetHeight : 0;
+    if (ref.current) {
+      const offsetTop = ref.current.offsetTop;
+      const adjustedOffsetTop = offsetTop;
   
-    window.scrollTo({
-      top: offsetTop - headerHeight - footerHeight - 25,
-      behavior: 'smooth'
-    });
-  };
+      window.scrollTo({
+        top: adjustedOffsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };  
   
   return (
     <>

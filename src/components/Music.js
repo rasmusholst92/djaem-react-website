@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const StyledMusicContainer = styled.div`
   padding-top: 10vh; // Increased top padding
+  padding-bottom: 30dvh
 `;
 
 const SectionHeader = styled.h2`
