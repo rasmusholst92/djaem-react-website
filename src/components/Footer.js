@@ -9,7 +9,11 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const SPOFITY_URL = "https://sptfy.com/PYz2";
+  const YOUTUBE_URL = "https://www.youtube.com/@djaem";
+  const FACEBOOK_URL = "https://www.facebook.com/djaemmusic";
+
+  const CURRENT_YEAR = new Date().getFullYear();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -18,19 +22,19 @@ const Footer = () => {
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item xs={12} sm={6}>
           <FooterText variant="body1">
-            © {currentYear} DJAEM. {isMobile ? '' : 'Alle rettigheder forbeholdes'}
+            © {CURRENT_YEAR} DJAEM. {isMobile ? '' : 'Alle rettigheder forbeholdes'}
           </FooterText>
           <a style={{ color: 'black', textDecoration: 'none' }} href="mailto:kontakt@djaem.dk">kontakt@djaem.dk</a>
         </Grid>
         <Grid item xs={12} sm={6}>
           <IconContainer>
-            <IconButton href='https://open.spotify.com/artist/5MwFy5y03VCf7EiEQcKxIx' aria-label="spotify" color="inherit" sx={IconStyle}>
+            <IconButton href={SPOFITY_URL} aria-label="spotify" color="inherit" sx={IconStyle}>
               <FontAwesomeIcon icon={faSpotify} />
             </IconButton>
-            <IconButton href='https://www.youtube.com/@djaem' aria-label="youtube" color="inherit" sx={IconStyle}>
+            <IconButton href={YOUTUBE_URL} aria-label="youtube" color="inherit" sx={IconStyle}>
               <YouTubeIcon />
             </IconButton>
-            <IconButton href='' aria-label="facebook" color="inherit" sx={IconStyle}>
+            <IconButton href={FACEBOOK_URL} aria-label="facebook" color="inherit" sx={IconStyle}>
               <FacebookIcon />
             </IconButton>
           </IconContainer>

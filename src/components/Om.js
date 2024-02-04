@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 const MainSection = styled(Box)({
   display: 'flex',
-  flexDirection: 'row', // Default to row
+  flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
   minHeight: '100vh',
   position: 'relative',
   overflow: 'hidden',
   '@media (max-width: 960px)': {
-    flexDirection: 'column', // Change to column on smaller screens
+    flexDirection: 'column',
     paddingBottom: '2rem',
   },
 });
@@ -21,7 +21,7 @@ const ImageContainer = styled('img')({
   height: 'auto',
   position: 'relative',
   '@media (max-width: 960px)': {
-    maxWidth: '80%', // Full width on smaller screens
+    maxWidth: '80%',
   },
 });
 
@@ -29,13 +29,14 @@ const TextCard = styled(Paper)({
   marginLeft: '-5%',
   padding: '20px',
   width: '30%',
-  backgroundColor: '#fff',
+  backgroundColor: '#FCFBF4',
   position: 'relative',
   zIndex: 1,
+  cursor: 'default',
   '@media (max-width: 960px)': {
-    width: '80%', // Full width on smaller screens
-    marginLeft: '0', // Adjust position on smaller screens
-    marginTop: '20px', // Add space between the image and text
+    width: '80%',
+    marginLeft: '0',
+    marginTop: '20px',
   },
 });
 
@@ -47,7 +48,8 @@ const StyledTypography = styled(Typography)({
   color: '#333',
   fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
   fontWeight: 400,
-  fontStyle: 'italic'
+  fontStyle: 'italic',
+  cursor: 'default',
 });
 
 const OmText = styled.h2({
@@ -63,16 +65,18 @@ const OmText = styled.h2({
   textAlign: 'center',
   margin: 0,
   fontWeight: 'bold',
+  cursor: 'default',
   '@media (max-width: 960px)': {
-    fontSize: '2em', // Smaller font size on smaller screens
+    fontSize: '2em',
   },
 });
 
 const AboutSection = () => {
+  const IMAGE = "http://djaem.dk/Billeder/Paa_Vej.png";
 
   return (
     <MainSection>
-      <ImageContainer src="http://djaem.dk/Billeder/Paa_Vej.png" alt="DJÆM Image" />
+      <ImageContainer src={IMAGE} alt="DJAEM Image" />
       <TextCard elevation={3}>
         <OmText>OM</OmText>
         <StyledTypography variant="body1">

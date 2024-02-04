@@ -32,6 +32,7 @@ export const BandName = styled.h1`
   font-family: 'Playfair Display', serif;
   position: relative;
   padding-bottom: 2px;
+  cursor: default;
 
   &::after {
     content: '';
