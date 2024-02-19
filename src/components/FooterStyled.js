@@ -12,7 +12,12 @@ export const FooterContainer = styled(Container)`
   width: 100%;
   z-index: 999;
   overflow: hidden;
+
+  @media (max-width: 960px) {
+    padding: 10px;
+  }
 `;
+
 
 export const FooterText = styled(Typography)`
   && {

@@ -22,6 +22,9 @@ export const NavLink = styled.button`
     font-style: italic;
     transition: font-family 0.3s ease;
     color: var(--djaem-red); 
+  };
+  @media (max-width: 960px) {
+    display: none;
   }
 `;
 

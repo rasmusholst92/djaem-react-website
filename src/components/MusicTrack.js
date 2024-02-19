@@ -50,6 +50,15 @@ const MusicTrack = ({ track }) => {
     showInfoButton: enter
   }));
 
+  const handleCloseModal = () => {
+    setState({ 
+      ...state, 
+      isModalOpen: false,
+      hover: false,
+      showInfoButton: false
+    });
+  };
+  
   return (
     <TrackContainer
       onMouseEnter={() => handleMouse(true)}
@@ -77,7 +86,7 @@ const MusicTrack = ({ track }) => {
         </InfoButton>
       </Paper>
 
-      <StyledModal open={isModalOpen} onClose={() => setState({ ...state, isModalOpen: false })}>
+      <StyledModal open={isModalOpen} onClose={handleCloseModal}>
         <ModalContent>
           <Typography sx={{ whiteSpace: 'pre-line' }}>{track.description}</Typography>
         </ModalContent>

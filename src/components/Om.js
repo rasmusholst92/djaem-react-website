@@ -67,7 +67,7 @@ const OmText = styled.h2({
   fontWeight: 'bold',
   cursor: 'default',
   '@media (max-width: 960px)': {
-    fontSize: '2em',
+    fontSize: '3.5em',
   },
 });
 
