@@ -10,6 +10,7 @@ import {
 import { Typography, Paper } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import { useTrail, useSpring } from 'react-spring';
+import parse from 'html-react-parser';
 
 const parseUrls = (urlString) => {
   try {
@@ -21,6 +22,7 @@ const parseUrls = (urlString) => {
 };
 
 const MusicTrack = ({ track }) => {
+  const trackDescription = parse(track.description);
   const [state, setState] = useState({
     hover: false,
     isModalOpen: false,
@@ -88,7 +90,7 @@ const MusicTrack = ({ track }) => {
 
       <StyledModal open={isModalOpen} onClose={handleCloseModal}>
         <ModalContent>
-          <Typography sx={{ whiteSpace: 'pre-line' }}>{track.description}</Typography>
+          <Typography sx={{ whiteSpace: 'pre-line' }}>{trackDescription}</Typography>
         </ModalContent>
       </StyledModal>
     </TrackContainer>

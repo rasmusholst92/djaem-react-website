@@ -29,7 +29,7 @@ const TextCard = styled(Paper)({
   marginLeft: '-5%',
   padding: '20px',
   width: '30%',
-  backgroundColor: '#FCFBF4',
+  backgroundColor: '#272727 !important',
   position: 'relative',
   zIndex: 1,
   cursor: 'default',
@@ -43,9 +43,8 @@ const TextCard = styled(Paper)({
 const StyledTypography = styled(Typography)({
   letterSpacing: '0.1em',
   lineHeight: '1.6',
-  textAlign: 'justify',
   marginBottom: '1em',
-  color: '#333',
+  color: 'var(--white) !important',
   fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
   fontWeight: 400,
   fontStyle: 'italic',
@@ -80,11 +79,11 @@ const AboutSection = () => {
       <TextCard elevation={3}>
         <OmText>OM</OmText>
         <StyledTypography variant="body1">
-          <b>DJAEM</b> er en musikfælleskab bestående af Emma Jarl og Jan Andersen. Far og datter. Navnet er sammensat af JA (Jan) og EM (Emma) og D-et tilskrives min ældste datter, som hedder Dina. Hun er med på sidelinjen, med gode råd og kritisk stillingtagen. Så det er lidt af et familieforetagende 😊
+          <b>DJAEM</b> er en musikfælleskab bestående af Emma Jarl og Jan Andersen. Far og datter. Navnet er sammensat af JA (Jan) og EM (Emma) og D-et tilskrives min ældste datter, som hedder Dina. Hun er med på sidelinjen, med gode råd og kritisk stillingtagen. Så det er lidt af et familieforetagende.
           <br /> <br />
           <b>DJAEM</b> er samtidig et lille hjemme lydstudie med alt relevant udstyr. Klaver, guitarer, mikrofoner, controllere etc., samt en masse computere og software. 
           <br /> <br />
-          <b>Vi</b> laver alting selv. Tekster, musik, indspilning, mixning, mastering og distribution. Vores musik udkommer på ca. 15 forskellige platforme, men de mest brugte er Spotify, Apple Music, Facebook og YouTube.
+          <b>Vi</b> laver alting selv. Tekster, musik, indspilning, mixing, mastering og distribution. Vores musik udkommer på ca. 15 forskellige platforme, men de mest brugte er Spotify, Apple Music, Facebook og YouTube.
         </StyledTypography>
       </TextCard>
     </MainSection>
