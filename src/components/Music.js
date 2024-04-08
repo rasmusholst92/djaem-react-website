@@ -28,7 +28,7 @@ const SliderContainer = styled.div`
 const sliderSettings = {
   dots: false,
   infinite: true,
-  centerMode: true,
+  centerMode: false,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
