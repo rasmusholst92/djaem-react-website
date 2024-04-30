@@ -13,9 +13,9 @@ const Footer = () => {
   const YOUTUBE_URL   = "https://www.youtube.com/@djaem";
   const FACEBOOK_URL  = "https://www.facebook.com/Djaem2";
 
-  const CURRENT_YEAR = new Date().getFullYear();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const CURRENT_YEAR  = new Date().getFullYear();
+  const theme         = useTheme();
+  const isMobile      = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <FooterContainer className="app-footer" maxWidth="xxl">
