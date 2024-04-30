@@ -11,7 +11,7 @@ import { useTheme } from '@mui/material/styles';
 const Footer = () => {
   const SPOFITY_URL   = "https://sptfy.com/PYz2";
   const YOUTUBE_URL   = "https://www.youtube.com/@djaem";
-  const FACEBOOK_URL  = "https://www.facebook.com/djaemmusic";
+  const FACEBOOK_URL  = "https://www.facebook.com/Djaem2";
 
   const CURRENT_YEAR = new Date().getFullYear();
   const theme = useTheme();
