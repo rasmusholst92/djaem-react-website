@@ -9,7 +9,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
 const Footer = () => {
-  const SPOFITY_URL   = "https://sptfy.com/PYz2";
+  const SPOFITY_URL   = "https://open.spotify.com/artist/5MwFy5y03VCf7EiEQcKxIx?si=C01S6QLSQEiesZM9jeHt9w";
   const YOUTUBE_URL   = "https://www.youtube.com/@djaem";
   const FACEBOOK_URL  = "https://www.facebook.com/Djaem2";
 
