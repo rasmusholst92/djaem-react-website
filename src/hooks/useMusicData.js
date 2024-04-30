@@ -1,4 +1,4 @@
-const API_URL = 'http://api.djaem.dk';
+const API_URL = 'https://api.djaem.dk';
 
 export const getAllMusic = async () => {
   const url = `${API_URL}/v1/music`;
