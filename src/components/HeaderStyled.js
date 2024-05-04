@@ -31,7 +31,7 @@ export const NavLink = styled.button`
 export const BandName = styled.h1`
   color: var(--white);
   font-size: 3.5em;
-  letter-spacing: .5rem;
+  letter-spacing: .8rem;
   font-family: 'Playfair Display', serif;
   position: relative;
   padding-bottom: 2px;

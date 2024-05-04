@@ -71,11 +71,13 @@ const OmText = styled.h2({
 });
 
 const AboutSection = () => {
-  const IMAGE = "http://djaem.dk/Billeder/Paa_Vej.png";
+  const URL   = "https://djaem.dk/Billeder/";
+  const IMAGE = "Spotlight.png";
+  const IMG   = URL + IMAGE;
 
   return (
     <MainSection>
-      <ImageContainer src={IMAGE} alt="DJAEM Image" />
+      <ImageContainer src={IMG} alt="DJAEM Image" />
       <TextCard elevation={3}>
         <OmText>OM</OmText>
         <StyledTypography variant="body1">
