@@ -17,7 +17,7 @@ const MainSection = styled(Box)({
 });
 
 const ImageContainer = styled('img')({
-  maxWidth: '40%',
+  maxWidth: '47%',
   height: 'auto',
   position: 'relative',
   '@media (max-width: 960px)': {
@@ -81,11 +81,19 @@ const AboutSection = () => {
       <TextCard elevation={3}>
         <OmText>OM</OmText>
         <StyledTypography variant="body1">
-          <b>DJAEM</b> er en musikfælleskab bestående af Emma Jarl og Jan Andersen. Far og datter. Navnet er sammensat af JA (Jan) og EM (Emma) og D-et tilskrives min ældste datter, som hedder Dina. Hun er med på sidelinjen, med gode råd og kritisk stillingtagen. Så det er lidt af et familieforetagende.
-          <br /> <br />
-          <b>DJAEM</b> er samtidig et lille hjemme lydstudie med alt relevant udstyr. Klaver, guitarer, mikrofoner, controllere etc., samt en masse computere og software. 
-          <br /> <br />
-          <b>Vi</b> laver alting selv. Tekster, musik, indspilning, mixing, mastering og distribution. Vores musik udkommer på ca. 15 forskellige platforme, men de mest brugte er Spotify, Apple Music, Facebook og YouTube.
+        <b>DJAEM</b> er en musikfælleskab bestående af Jan Andersen og Emma Jarl. Far og datter. Navnet er sammensat af JA (Jan) og EM (Emma) og D-et tilskrives den ældste datter, som hedder Dina. Hun er med på sidelinjen med gode råd og kritisk stillingtagen. Så det er lidt af et familieforetagende.
+        <br /><br />
+        <b>DJAEM</b> er samtidig et lille hjemme lydstudie med alt relevant udstyr. Klaver, guitarer, mikrofoner, controllere etc., samt en masse computere og software. 
+        <br /><br />
+        <b>Vi</b> laver alting selv. Tekster, musik, indspilning, mixning, mastering og distribution. Vores musik udkommer på ca. 15 forskellige platforme, men de mest brugte er Spotify, Apple Music, Facebook og YouTube.
+        <br /><br />
+        <b>Her</b> på hjemmesiden (webmaster Rasmus, svigersøn) ligger al musik samlet et sted og herfra linker man videre til de forskellige platforme. 
+        <br /><br />
+        <b>Håber</b>, at I kan lide noget af det vi laver. 
+        <br />
+        Skriv gerne til os på Facebook.
+        <br /><br />
+        <b>Emma og Jan </b>
         </StyledTypography>
       </TextCard>
     </MainSection>
