@@ -13,13 +13,17 @@ import { useTrail, useSpring } from 'react-spring';
 import parse from 'html-react-parser';
 
 const parseUrls = (urlString) => {
-  try {
-    return JSON.parse(urlString);
-  } catch (e) {
-    console.error("Error parsing URLs", e);
-    return {};
+  if (typeof urlString === 'string') {
+    try {
+      return JSON.parse(urlString);
+    } catch (e) {
+      console.error("Error parsing URLs", e);
+      return {};
+    }
   }
+  return urlString;
 };
+
 
 const MusicTrack = ({ track }) => {
   const trackDescription = parse(track.description);
